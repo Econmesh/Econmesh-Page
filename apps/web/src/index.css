@@ -1,0 +1,43 @@
+@import "@econmesh/ui/globals.css";
+
+@theme inline {
+	--color-econ-dark: var(--econ-dark);
+	--color-econ-green: var(--econ-green);
+	--color-econ-orange: var(--econ-orange);
+	--color-econ-cream: var(--econ-cream);
+	--font-display: var(--font-montserrat), sans-serif;
+}
+
+:root {
+	--econ-dark: #004d40;
+	--econ-green: #2e7d32;
+	--econ-orange: #f57c00;
+	--econ-cream: #fdfaf5;
+	--econ-overlay: rgba(0, 77, 64, 0.75);
+	--econ-hero-gradient: linear-gradient(
+		to right,
+		rgba(0, 71, 49, 0.92) 0%,
+		rgba(0, 77, 64, 0.72) 30%,
+		rgba(0, 77, 64, 0.35) 55%,
+		rgba(0, 77, 64, 0.12) 75%,
+		transparent 100%
+	);
+}
+
+@layer components {
+	.hero-gradient-overlay {
+		background: var(--econ-overlay);
+	}
+
+	@media (width >= 768px) {
+		.hero-gradient-overlay {
+			background: var(--econ-hero-gradient);
+		}
+	}
+}
+
+@layer base {
+	body {
+		font-family: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+	}
+}

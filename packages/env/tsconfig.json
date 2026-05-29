@@ -1,0 +1,3 @@
+{
+  "extends": "@econmesh/config/tsconfig.base.json"
+}

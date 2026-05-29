@@ -1,0 +1,40 @@
+import { Recycle, RefreshCw, Zap } from "lucide-react";
+
+import { featureCards } from "@/lib/site-config";
+
+const iconMap = {
+	refresh: RefreshCw,
+	zap: Zap,
+	recycle: Recycle,
+} as const;
+
+export function FeatureCards() {
+	return (
+		<section
+			id="solucoes"
+			className="relative z-20 -mt-16 mx-auto max-w-7xl px-4 pb-8 md:-mt-24 sm:px-6 lg:px-8"
+			aria-labelledby="solucoes-heading"
+		>
+			<h2 id="solucoes-heading" className="sr-only">
+				Nossas soluções
+			</h2>
+			<ul className="grid gap-4 md:grid-cols-3 md:gap-6">
+				{featureCards.map((card) => {
+					const Icon = iconMap[card.icon];
+					return (
+						<li key={card.title}>
+							<article className="flex flex-col items-center gap-4 rounded-xl bg-white px-6 py-8 text-center shadow-lg transition-shadow hover:shadow-xl">
+								<div className="flex size-16 items-center justify-center rounded-full border-2 border-dashed border-econ-green/50">
+									<Icon className="size-8 text-econ-green" strokeWidth={1.75} aria-hidden="true" />
+								</div>
+								<h3 className="font-display font-bold text-econ-green text-sm uppercase leading-snug tracking-wide sm:text-base">
+									{card.title}
+								</h3>
+							</article>
+						</li>
+					);
+				})}
+			</ul>
+		</section>
+	);
+}
