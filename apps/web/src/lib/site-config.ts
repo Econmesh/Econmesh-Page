@@ -1,9 +1,11 @@
+import { env } from "@econmesh/env/web";
+
 export const siteConfig = {
 	name: "ECONMESH",
 	tagline: "CleanTech para a transição circular",
 	description:
 		"Um ecossistema digital que mapeia, conecta e viabiliza fluxos de recursos (materiais, água, energia e serviços) entre diversas empresas, de forma inteligente e confiável.",
-	url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://econmesh.com.br",
+	url: env.NEXT_PUBLIC_SITE_URL ?? "https://econmesh.com.br",
 	contact: {
 		email: "contato@econmesh.com.br",
 		phone: "+55 (11) 0000-0000",
