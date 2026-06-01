@@ -13,7 +13,7 @@ export function Logo({ className, width = 180, height = 36 }: LogoProps) {
 	return (
 		<Link href="#home" className={className} aria-label={`${siteConfig.name} — início`}>
 			<Image
-				src="/logo.svg"
+				src="/ECONMESH-LOGO.png"
 				alt={siteConfig.name}
 				width={width}
 				height={height}

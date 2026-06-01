@@ -9,7 +9,7 @@ export const siteConfig = {
 	contact: {
 		email: "contato@econmesh.com.br",
 		phone: "+55 (11) 0000-0000",
-		location: "São Paulo, Brasil",
+		location: "Recife - PE, Brasil",
 	},
 	newsletter: {
 		mailto: "contato@econmesh.com.br",
@@ -18,15 +18,15 @@ export const siteConfig = {
 	social: [
 		{
 			label: "LinkedIn",
-			href: "https://www.linkedin.com/company/econmesh",
+			href: "#",
 		},
 		{
 			label: "Instagram",
-			href: "https://www.instagram.com/econmesh",
+			href: "#",
 		},
 		{
 			label: "YouTube",
-			href: "https://www.youtube.com/@econmesh",
+			href: "#",
 		},
 	],
 } as const;
