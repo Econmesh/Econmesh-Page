@@ -4,7 +4,7 @@ export function IntroSection() {
 	return (
 		<section
 			id="sobre"
-			className="bg-econ-cream px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24"
+			className="bg-econ-cream px-4 pt-16 pb-10 sm:px-6 sm:pt-20 sm:pb-12 lg:px-8 lg:pt-24 lg:pb-14"
 			aria-labelledby="sobre-heading"
 		>
 			<div className="mx-auto max-w-3xl text-center">

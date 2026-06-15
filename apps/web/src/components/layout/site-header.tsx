@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import { Logo } from "@/components/brand/logo";
 import { MobileNav } from "@/components/layout/mobile-nav";
-import { navLinks } from "@/lib/site-config";
+import { navLinks, siteConfig } from "@/lib/site-config";
 
 export function SiteHeader() {
 	return (
@@ -28,13 +28,15 @@ export function SiteHeader() {
 				</nav>
 
 				<div className="flex items-center gap-2">
-					<Link
-						href="#contato"
+					<a
+						href={siteConfig.accessUrl}
+						target={siteConfig.accessUrl.startsWith("http") ? "_blank" : undefined}
+						rel={siteConfig.accessUrl.startsWith("http") ? "noopener noreferrer" : undefined}
 						className="hidden min-h-11 items-center rounded-full border-2 border-econ-orange px-5 font-display font-semibold text-econ-orange text-sm tracking-wide transition-colors hover:bg-econ-orange hover:text-white lg:inline-flex"
 					>
 						ACESSAR
-					</Link>
-					<MobileNav />
+					</a>
+					<MobileNav accessHref={siteConfig.accessUrl} />
 				</div>
 			</div>
 		</header>

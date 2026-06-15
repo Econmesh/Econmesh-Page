@@ -7,10 +7,11 @@ import { useEffect, useId, useState } from "react";
 import { navLinks } from "@/lib/site-config";
 
 type MobileNavProps = {
-	accessHref?: string;
+	accessHref: string;
 };
 
-export function MobileNav({ accessHref = "#contato" }: MobileNavProps) {
+export function MobileNav({ accessHref }: MobileNavProps) {
+	const isExternalAccess = accessHref.startsWith("http");
 	const [open, setOpen] = useState(false);
 	const panelId = useId();
 
@@ -60,13 +61,15 @@ export function MobileNav({ accessHref = "#contato" }: MobileNavProps) {
 								</li>
 							))}
 						</ul>
-						<Link
+						<a
 							href={accessHref}
+							target={isExternalAccess ? "_blank" : undefined}
+							rel={isExternalAccess ? "noopener noreferrer" : undefined}
 							className="mt-4 inline-flex min-h-11 items-center justify-center rounded-full border-2 border-econ-orange px-6 font-display font-semibold text-econ-orange text-sm tracking-wide"
 							onClick={() => setOpen(false)}
 						>
 							ACESSAR
-						</Link>
+						</a>
 					</nav>
 				</>
 			) : null}
