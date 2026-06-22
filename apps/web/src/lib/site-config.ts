@@ -6,29 +6,25 @@ export const siteConfig = {
 	description:
 		"Um ecossistema digital que mapeia, conecta e viabiliza fluxos de recursos (materiais, água, energia e serviços) entre diversas empresas, de forma inteligente e confiável.",
 	url: env.NEXT_PUBLIC_SITE_URL ?? "https://econmesh.com.br",
-	accessUrl: env.NEXT_PUBLIC_ACCESS_URL ?? "#contato",
+	accessUrl: env.NEXT_PUBLIC_ACCESS_APP_URL ?? "#contato",
 	contact: {
 		email: "contato@econmesh.com.br",
 		phone: "81996238779",
 		location: "Recife - PE, Brasil",
 	},
-	newsletter: {
-		mailto: "contato@econmesh.com.br",
-		subject: "Newsletter ECONMESH — Novidades",
-	},
 	social: [
-		{
-			label: "LinkedIn",
-			href: "#",
-		},
+		// {
+		// 	label: "LinkedIn",
+		// 	href: "#",
+		// },
 		{
 			label: "Instagram",
-			href: "#",
+			href: "https://www.instagram.com/econmesh.econmesh/",
 		},
-		{
-			label: "YouTube",
-			href: "#",
-		},
+		// {
+		// 	label: "YouTube",
+		// 	href: "#",
+		// },
 	],
 } as const;
 
@@ -37,7 +33,7 @@ export const navLinks = [
 	{ href: "#solucoes", label: "SOLUÇÕES" },
 	{ href: "#sobre", label: "SOBRE" },
 	{ href: "#contato", label: "CONTATO" },
-	{ href: "#novidades", label: "BLOG" },
+	// { href: "#novidades", label: "BLOG" },
 ] as const;
 
 export const solutions = {
@@ -150,5 +146,5 @@ export const footerQuickLinks = [
 	{ href: "#solucoes", label: "Soluções" },
 	{ href: "#sobre", label: "Sobre" },
 	{ href: "#contato", label: "Contato" },
-	{ href: "#novidades", label: "Blog" },
+	// { href: "#novidades", label: "Blog" },
 ] as const;

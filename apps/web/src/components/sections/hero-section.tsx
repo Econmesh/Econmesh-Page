@@ -29,7 +29,7 @@ export function HeroSection() {
 						Economia circular
 					</h1>
 					<p className="mt-3 font-display font-bold text-econ-orange text-[clamp(0.875rem,2.5vw,1.125rem)] uppercase tracking-wide">
-						O futuro da indústria é regenerativo
+						Eficiência do Futuro é Circular!
 					</p>
 					<p className="mt-5 max-w-xl text-base text-white/95 leading-relaxed sm:text-lg">
 						{siteConfig.description}

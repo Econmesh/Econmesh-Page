@@ -2,25 +2,40 @@
 
 import { Input } from "@econmesh/ui/components/input";
 import { useState } from "react";
+import { toast } from "sonner";
 
-import { siteConfig } from "@/lib/site-config";
+type FormStatus = "idle" | "loading" | "success";
 
 export function ComingSoonSection() {
-	const [submitted, setSubmitted] = useState(false);
+	const [status, setStatus] = useState<FormStatus>("idle");
 
-	function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+	async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
 		e.preventDefault();
 		const form = e.currentTarget;
 		const email = new FormData(form).get("email");
 		if (typeof email !== "string" || !email) return;
 
-		const subject = encodeURIComponent(siteConfig.newsletter.subject);
-		const body = encodeURIComponent(
-			`Olá,\n\nGostaria de receber novidades da ECONMESH.\n\nE-mail: ${email}`,
-		);
-		const mailto = `mailto:${siteConfig.newsletter.mailto}?subject=${subject}&body=${body}`;
-		window.location.href = mailto;
-		setSubmitted(true);
+		setStatus("loading");
+
+		try {
+			const response = await fetch("/api/newsletter/subscribe", {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify({ email }),
+			});
+
+			if (!response.ok) {
+				const data = (await response.json().catch(() => null)) as { error?: string } | null;
+				throw new Error(data?.error ?? "Falha ao cadastrar.");
+			}
+
+			setStatus("success");
+		} catch (error) {
+			setStatus("idle");
+			toast.error(
+				error instanceof Error ? error.message : "Não foi possível cadastrar. Tente novamente.",
+			);
+		}
 	}
 
 	return (
@@ -41,9 +56,9 @@ export function ComingSoonSection() {
 					nosso ecossistema. Cadastre-se para ser avisado quando o blog estiver no ar.
 				</p>
 
-				{submitted ? (
+				{status === "success" ? (
 					<p className="mt-8 font-medium text-econ-green" role="status">
-						Obrigado! Seu cliente de e-mail será aberto para confirmar o cadastro.
+						Obrigado! Você será avisado quando o blog estiver no ar.
 					</p>
 				) : (
 					<form className="mt-8 flex flex-col gap-3 sm:flex-row" onSubmit={handleSubmit}>
@@ -55,15 +70,17 @@ export function ComingSoonSection() {
 							name="email"
 							type="email"
 							required
+							disabled={status === "loading"}
 							placeholder="seu@email.com"
 							autoComplete="email"
 							className="h-11 flex-1 rounded-lg border-econ-green/30 px-4 text-base"
 						/>
 						<button
 							type="submit"
-							className="inline-flex h-11 min-w-[140px] items-center justify-center rounded-lg bg-econ-green px-6 font-display font-semibold text-sm text-white uppercase tracking-wide transition-colors hover:bg-econ-dark"
+							disabled={status === "loading"}
+							className="inline-flex h-11 min-w-[140px] items-center justify-center rounded-lg bg-econ-green px-6 font-display font-semibold text-sm text-white uppercase tracking-wide transition-colors hover:bg-econ-dark disabled:cursor-not-allowed disabled:opacity-70"
 						>
-							Avise-me
+							{status === "loading" ? "Enviando…" : "Avise-me"}
 						</button>
 					</form>
 				)}
