@@ -5,13 +5,13 @@ const subscribeSchema = z.object({
 	email: z.string().email(),
 });
 
-const NEWSLETTER_SUBSCRIBE_PATH = "/newsletter/subscribe";
+const NEWSLETTER_SUBSCRIBE_PATH = "/coming-soon/subscribe";
 
 export async function POST(request: Request) {
-	const apiUrl = env.API_URL;
+	const apiUrl = env.NEXT_PUBLIC_API_URL;
 	if (!apiUrl) {
 		return Response.json(
-			{ error: "API não configurada. Defina API_URL no .env." },
+			{ error: "API não configurada. Defina NEXT_PUBLIC_API_URL no .env." },
 			{ status: 503 },
 		);
 	}

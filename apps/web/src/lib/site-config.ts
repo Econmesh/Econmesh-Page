@@ -7,6 +7,7 @@ export const siteConfig = {
 		"Um ecossistema digital que mapeia, conecta e viabiliza fluxos de recursos (materiais, água, energia e serviços) entre diversas empresas, de forma inteligente e confiável.",
 	url: env.NEXT_PUBLIC_SITE_URL ?? "https://econmesh.com.br",
 	accessUrl: env.NEXT_PUBLIC_ACCESS_APP_URL ?? "#contato",
+	api: env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000",
 	contact: {
 		email: "contato@econmesh.com.br",
 		phone: "81996238779",

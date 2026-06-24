@@ -4,6 +4,8 @@ import { Input } from "@econmesh/ui/components/input";
 import { useState } from "react";
 import { toast } from "sonner";
 
+import { siteConfig } from "@/lib/site-config";
+
 type FormStatus = "idle" | "loading" | "success";
 
 export function ComingSoonSection() {
@@ -18,7 +20,7 @@ export function ComingSoonSection() {
 		setStatus("loading");
 
 		try {
-			const response = await fetch("/api/newsletter/subscribe", {
+			const response = await fetch(`${siteConfig.api}/coming-soon/subscribe`, {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({ email }),
