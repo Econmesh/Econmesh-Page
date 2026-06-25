@@ -61,18 +61,7 @@ export const solutions = {
 			closing:
 				"A solução conecta empresas, reduz custos e apoia conformidade ESG com inteligência de dados. Seu modelo combina assinaturas, consultoria e serviços. A ECONMESH acelera a transição para uma economia circular real, prática e mensurável.",
 		},
-		{
-			id: "mri",
-			shortTitle: "MANUFATURA REVERSA ITINERANTE (MRI)",
-			title: "Manufatura Reversa Itinerante",
-			icon: "refresh" as const,
-			accent: "orange" as const,
-			paragraphs: [
-				"É a solução definitiva para o gargalo logístico que hoje inviabiliza a economia circular em larga escala. Ao levarmos a planta de processamento até a fonte do resíduo — seja um parque solar ou uma planta industrial — eliminamos os custos proibitivos de frete e os riscos associados ao transporte de materiais de baixa densidade ou alta periculosidade.",
-				"O diferencial tecnológico da MRI reside na sua agilidade e capacidade de escala, rompendo com o paradigma da centralização industrial. Enquanto as plantas convencionais exigem aportes fixos imensos e dependem de um fluxo constante de material para se manterem rentáveis, a nossa estrutura móvel é configurada para operar com máxima performance na ponta da demanda. Com o suporte de inteligência de dados, a unidade atua onde o resíduo é mais abundante e valioso, garantindo uma taxa de recuperação de materiais nobres superior às alternativas tradicionais, e tornando o ciclo de vida do produto não apenas fechado, mas economicamente vantajoso.",
-				"O que apresentamos é um modelo de logística reversa descentralizada, que transforma um passivo ambiental oneroso em uma operação de alta eficiência, reduzindo drasticamente a pegada de carbono da própria cadeia de reciclagem.",
-			],
-		},
+		
 		{
 			id: "dmc",
 			shortTitle: "DIAGNÓSTICO DE MATURIDADE CIRCULAR",
@@ -94,6 +83,18 @@ export const solutions = {
 				"Invisibilidade do valor residual",
 				"Despesas ocultas com logística e armazenamento de passivos ambientais",
 				"Incerteza e risco de conformidade",
+			],
+		},
+		{
+			id: "mri",
+			shortTitle: "MANUFATURA REVERSA ITINERANTE (MRI)",
+			title: "Manufatura Reversa Itinerante",
+			icon: "refresh" as const,
+			accent: "orange" as const,
+			paragraphs: [
+				"É a solução definitiva para o gargalo logístico que hoje inviabiliza a economia circular em larga escala. Ao levarmos a planta de processamento até a fonte do resíduo — seja um parque solar ou uma planta industrial — eliminamos os custos proibitivos de frete e os riscos associados ao transporte de materiais de baixa densidade ou alta periculosidade.",
+				"O diferencial tecnológico da MRI reside na sua agilidade e capacidade de escala, rompendo com o paradigma da centralização industrial. Enquanto as plantas convencionais exigem aportes fixos imensos e dependem de um fluxo constante de material para se manterem rentáveis, a nossa estrutura móvel é configurada para operar com máxima performance na ponta da demanda. Com o suporte de inteligência de dados, a unidade atua onde o resíduo é mais abundante e valioso, garantindo uma taxa de recuperação de materiais nobres superior às alternativas tradicionais, e tornando o ciclo de vida do produto não apenas fechado, mas economicamente vantajoso.",
+				"O que apresentamos é um modelo de logística reversa descentralizada, que transforma um passivo ambiental oneroso em uma operação de alta eficiência, reduzindo drasticamente a pegada de carbono da própria cadeia de reciclagem.",
 			],
 		},
 	],
