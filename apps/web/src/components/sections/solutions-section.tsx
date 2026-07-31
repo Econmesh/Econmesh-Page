@@ -1,6 +1,7 @@
 import { AlertCircle, Recycle, RefreshCw, Zap } from "lucide-react";
 
-import { solutions } from "@/lib/site-config";
+import { solutions, siteConfig } from "@/lib/site-config";
+import { MobileNav } from "../layout/mobile-nav";
 
 const iconMap = {
 	refresh: RefreshCw,
@@ -133,6 +134,18 @@ export function SolutionsSection() {
 													{solution.closing}
 												</p>
 											) : null}
+											{solution.id === "plataforma" && 
+											(<div className="flex items-center gap-2">
+												<a
+													href={siteConfig.accessUrl}
+													target={siteConfig.accessUrl.startsWith("http") ? "_blank" : undefined}
+													rel={siteConfig.accessUrl.startsWith("http") ? "noopener noreferrer" : undefined}
+													className="hidden min-h-11 items-center rounded-full border-2 border-econ-orange px-5 font-display font-semibold text-econ-orange text-sm tracking-wide transition-colors hover:bg-econ-orange hover:text-white lg:inline-flex"
+												>
+													Acessar a Econmesh Circular
+												</a>
+												<MobileNav accessHref={siteConfig.accessUrl} />
+											</div>)}
 										</div>
 									</div>
 								</article>

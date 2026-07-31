@@ -44,7 +44,7 @@ export const solutions = {
 	items: [
 		{
 			id: "plataforma",
-			shortTitle: "ECONOMIA CIRCULAR",
+			shortTitle: "ECONMESHCIRCULAR",
 			title: "Economia Circular",
 			icon: "zap" as const,
 			accent: "green" as const,
@@ -65,7 +65,7 @@ export const solutions = {
 		{
 			id: "dmc",
 			shortTitle: "Diagnóstico de Maturidade Circular",
-			title: "Econmesh DMC",
+			title: "ECONMESH DMC",
 			icon: "recycle" as const,
 			accent: "green" as const,
 			paragraphs: [
@@ -88,7 +88,7 @@ export const solutions = {
 		{
 			id: "mri",
 			shortTitle: "MANUFATURA REVERSA ITINERANTE (MRI)",
-			title: "Econmesh MRI",
+			title: "ECONMESH MRI",
 			icon: "refresh" as const,
 			accent: "orange" as const,
 			paragraphs: [

@@ -34,7 +34,7 @@ export function SiteHeader() {
 						rel={siteConfig.accessUrl.startsWith("http") ? "noopener noreferrer" : undefined}
 						className="hidden min-h-11 items-center rounded-full border-2 border-econ-orange px-5 font-display font-semibold text-econ-orange text-sm tracking-wide transition-colors hover:bg-econ-orange hover:text-white lg:inline-flex"
 					>
-						ACESSAR
+						Acessar a Econmesh Circular
 					</a>
 					<MobileNav accessHref={siteConfig.accessUrl} />
 				</div>

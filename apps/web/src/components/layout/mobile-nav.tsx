@@ -68,7 +68,7 @@ export function MobileNav({ accessHref }: MobileNavProps) {
 							className="mt-4 inline-flex min-h-11 items-center justify-center rounded-full border-2 border-econ-orange px-6 font-display font-semibold text-econ-orange text-sm tracking-wide"
 							onClick={() => setOpen(false)}
 						>
-							ACESSAR
+							Acessar a Econmesh Circular
 						</a>
 					</nav>
 				</>
