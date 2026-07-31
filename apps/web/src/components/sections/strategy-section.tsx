@@ -12,7 +12,7 @@ const valueIconMap = {
 export function StrategySection() {
 	return (
 		<section
-			className="bg-econ-cream px-4 pb-16 sm:px-6 sm:pb-20 lg:px-8 lg:pb-24"
+			className="bg-econ-cream px-4 pt-4 pb-16 sm:px-6 sm:pt-6 sm:pb-20 lg:px-8 lg:pt-8 lg:pb-24"
 			aria-labelledby="estrategia-heading"
 		>
 			<div className="mx-auto max-w-7xl">

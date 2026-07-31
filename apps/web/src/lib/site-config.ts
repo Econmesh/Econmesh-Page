@@ -10,7 +10,7 @@ export const siteConfig = {
 	api: env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000",
 	contact: {
 		email: "contato@econmesh.com.br",
-		phone: "81996238779",
+		phone: "(81) 99623-8779",
 		location: "Recife - PE, Brasil",
 	},
 	social: [
@@ -20,7 +20,7 @@ export const siteConfig = {
 		// },
 		{
 			label: "Instagram",
-			href: "https://www.instagram.com/econmesh.econmesh/",
+			href: "https://www.instagram.com/econmesh",
 		},
 		// {
 		// 	label: "YouTube",
@@ -105,6 +105,49 @@ export const featureCards = solutions.items.map((solution) => ({
 	icon: solution.icon,
 	href: `#solucao-${solution.id}`,
 }));
+
+export const team = {
+	heading: "Nosso Time",
+	subheading:
+		"Pessoas que unem tecnologia, indústria e sustentabilidade para tornar a economia circular uma realidade prática.",
+	members: [
+		{
+			name: "Osangela Sena",
+			role: "CEO e Fundadora",
+			description:
+				"Economista e Cientista de Dados, é a mente por trás da arquitetura de inteligência da plataforma. Ela lidera o desenvolvimento e refinamento do algoritmo proprietário da startup (Score Match), combinando modelagem preditiva e economia para identificar padrões invisíveis de simbiose industrial e garantir que dados químicos, físicos e logísticos se traduzam em conexões sustentáveis seguras.",
+			image: "/images/team/Osangela.jpg",
+		},
+		{
+			name: "Rafaela Sena",
+			role: "CSO e Fundadora",
+			description:
+				"Engenheira, lidera os projetos de energia solar da startup, Rafaela assegura a precisão e a confiabilidade de todas as frentes de engenharia do ecossistema. Sua visão de processos industriais e de transição energética é fundamental para viabilizar as soluções de manufatura reversa itinerante no setor fotovoltaico e coordenar com excelência técnica as integrações da plataforma com grandes polos produtivos.",
+			image: "/images/team/Rafaela.jpg",
+		},
+		{
+			name: "Danielson Holanda",
+			role: "HEAD de Consultoria Ambiental",
+			description:
+				"Danielson é o responsável por traduzir as métricas de impacto socioambiental da Econmesh em valor tangível para as empresas. Ele lidera o desenvolvimento e aplicação do Diagnóstico de Maturidade Circular (DMC), ajudando as indústrias parceiras a implementar ações sustentáveis em escala prática e local, além de consolidar os indicadores de conformidade e governança ESG.",
+			image: "/images/team/Danielson.jpg",
+		},
+		{
+			name: "Roberto Guimarães ",
+			role: "HEAD de Processos",
+			description:
+				"Na Econmesh, Roberto atua na linha de frente operacional, supervisionando as atividades de campo e liderando o mapeamento técnico dos fluxos de materiais e descarte das indústrias. Sua atuação garante que a validação física dos dados das empresas seja feita com alto rigor técnico e operacional, pavimentando o caminho para a simbiose industrial em escala real nos Complexos Industriais.",
+			image: "/images/team/Roberto.jpg",
+		},
+		{
+			name: "Guilherme Rodrigues",
+			role: "HEAD de Automação",
+			description:
+				"Engenheiro, lidera os projetos de automação e manufatura avançada. Ele atua diretamente na inteligência de dados aplicada à indústria 4.0, desenhando a integração tecnológica dos sistemas de rastreamento de resíduos (incluindo hardware de sensoriamento IoT) e as interfaces que garantem o dinamismo do nosso ecossistema circular.",
+			image: "/images/team/Guilherme.png",
+		},
+	],
+} as const;
 
 export const strategy = {
 	heading: "Nossa Estratégia",
