@@ -2,7 +2,8 @@ import { Instagram, Linkedin, Mail, MapPin, Phone, Youtube } from "lucide-react"
 import Link from "next/link";
 
 import { Logo } from "@/components/brand/logo";
-import { footerQuickLinks, siteConfig } from "@/lib/site-config";
+import { hasPublishedPosts } from "@/lib/blog";
+import { getFooterQuickLinks, siteConfig } from "@/lib/site-config";
 
 const socialIcons = {
 	LinkedIn: Linkedin,
@@ -10,8 +11,10 @@ const socialIcons = {
 	YouTube: Youtube,
 } as const;
 
-export function SiteFooter() {
+export async function SiteFooter() {
 	const year = new Date().getFullYear();
+	const showBlog = await hasPublishedPosts();
+	const footerQuickLinks = getFooterQuickLinks(showBlog);
 
 	return (
 		<footer className="bg-econ-dark text-white" aria-labelledby="footer-heading">
@@ -21,7 +24,7 @@ export function SiteFooter() {
 			<div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
 				<div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
 					<div className="space-y-4">
-						<Logo className="[&_img]:brightness-0 [&_img]:invert" />
+						<Logo href="/" className="[&_img]:brightness-0 [&_img]:invert" />
 						<p className="text-sm text-white/80 leading-relaxed">{siteConfig.tagline}</p>
 					</div>
 

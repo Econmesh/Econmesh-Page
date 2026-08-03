@@ -29,13 +29,23 @@ export const siteConfig = {
 	],
 } as const;
 
-export const navLinks = [
-	{ href: "#home", label: "HOME" },
-	{ href: "#solucoes", label: "SOLUÇÕES" },
-	{ href: "#sobre", label: "SOBRE" },
-	{ href: "#contato", label: "CONTATO" },
-	// { href: "#novidades", label: "BLOG" },
-] as const;
+export type NavLink = { href: string; label: string };
+
+export const baseNavLinks: NavLink[] = [
+	{ href: "/#home", label: "HOME" },
+	{ href: "/#solucoes", label: "SOLUÇÕES" },
+	{ href: "/#sobre", label: "SOBRE" },
+	{ href: "/#contato", label: "CONTATO" },
+];
+
+/** @deprecated Prefer getNavLinks(showBlog) */
+export const navLinks = baseNavLinks;
+
+export function getNavLinks(showBlog: boolean): NavLink[] {
+	if (!showBlog) return baseNavLinks;
+	return [...baseNavLinks, { href: "/blog", label: "BLOG" }];
+}
+
 
 export const solutions = {
 	heading: "Soluções da ECONMESH",
@@ -186,10 +196,18 @@ export const strategy = {
 	],
 } as const;
 
-export const footerQuickLinks = [
-	{ href: "#home", label: "Home" },
-	{ href: "#solucoes", label: "Soluções" },
-	{ href: "#sobre", label: "Sobre" },
-	{ href: "#contato", label: "Contato" },
-	// { href: "#novidades", label: "Blog" },
-] as const;
+export const baseFooterQuickLinks: NavLink[] = [
+	{ href: "/#home", label: "Home" },
+	{ href: "/#solucoes", label: "Soluções" },
+	{ href: "/#sobre", label: "Sobre" },
+	{ href: "/#contato", label: "Contato" },
+];
+
+/** @deprecated Prefer getFooterQuickLinks(showBlog) */
+export const footerQuickLinks = baseFooterQuickLinks;
+
+export function getFooterQuickLinks(showBlog: boolean): NavLink[] {
+	if (!showBlog) return baseFooterQuickLinks;
+	return [...baseFooterQuickLinks, { href: "/blog", label: "Blog" }];
+}
+

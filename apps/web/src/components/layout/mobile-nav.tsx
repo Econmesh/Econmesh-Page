@@ -4,13 +4,17 @@ import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useId, useState } from "react";
 
-import { navLinks } from "@/lib/site-config";
+import { baseNavLinks, type NavLink } from "@/lib/site-config";
 
 type MobileNavProps = {
 	accessHref: string;
+	links?: NavLink[];
 };
 
-export function MobileNav({ accessHref }: MobileNavProps) {
+export function MobileNav({
+	accessHref,
+	links = baseNavLinks,
+}: MobileNavProps) {
 	const isExternalAccess = accessHref.startsWith("http");
 	const [open, setOpen] = useState(false);
 	const panelId = useId();
@@ -49,7 +53,7 @@ export function MobileNav({ accessHref }: MobileNavProps) {
 						aria-label="Menu principal"
 					>
 						<ul className="flex flex-col gap-1">
-							{navLinks.map((link) => (
+							{links.map((link) => (
 								<li key={link.href}>
 									<Link
 										href={link.href}

@@ -41,3 +41,72 @@
 		font-family: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
 	}
 }
+
+@layer components {
+	.blog-prose {
+		color: color-mix(in srgb, var(--econ-dark) 80%, transparent);
+		font-size: 1.0625rem;
+		line-height: 1.75;
+	}
+
+	.blog-prose :where(h2, h3, h4) {
+		color: var(--econ-dark);
+		font-family: var(--font-montserrat), sans-serif;
+		font-weight: 800;
+		letter-spacing: 0.02em;
+		margin-top: 2rem;
+		margin-bottom: 0.75rem;
+	}
+
+	.blog-prose h2 {
+		font-size: 1.5rem;
+	}
+
+	.blog-prose h3 {
+		font-size: 1.25rem;
+	}
+
+	.blog-prose p {
+		margin-bottom: 1rem;
+	}
+
+	.blog-prose :where(ul, ol) {
+		margin-bottom: 1rem;
+		padding-left: 1.25rem;
+	}
+
+	.blog-prose ul {
+		list-style: disc;
+	}
+
+	.blog-prose ol {
+		list-style: decimal;
+	}
+
+	.blog-prose a {
+		color: var(--econ-green);
+		font-weight: 600;
+		text-decoration: underline;
+		text-underline-offset: 2px;
+	}
+
+	.blog-prose blockquote {
+		border-left: 3px solid var(--econ-orange);
+		color: color-mix(in srgb, var(--econ-dark) 70%, transparent);
+		margin: 1.5rem 0;
+		padding-left: 1rem;
+		font-style: italic;
+	}
+
+	.blog-prose img {
+		border-radius: 0.75rem;
+		margin: 1.5rem 0;
+		max-width: 100%;
+		height: auto;
+	}
+
+	.blog-prose :where(strong) {
+		color: var(--econ-dark);
+		font-weight: 700;
+	}
+}

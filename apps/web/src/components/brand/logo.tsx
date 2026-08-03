@@ -7,11 +7,17 @@ type LogoProps = {
 	className?: string;
 	width?: number;
 	height?: number;
+	href?: string;
 };
 
-export function Logo({ className, width = 180, height = 36 }: LogoProps) {
+export function Logo({
+	className,
+	width = 180,
+	height = 36,
+	href = "/#home",
+}: LogoProps) {
 	return (
-		<Link href="#home" className={className} aria-label={`${siteConfig.name} — início`}>
+		<Link href={href} className={className} aria-label={`${siteConfig.name} — início`}>
 			<Image
 				src="/ECONMESH-LOGO.png"
 				alt={siteConfig.name}
