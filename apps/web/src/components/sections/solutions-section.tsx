@@ -2,6 +2,7 @@ import { AlertCircle, Recycle, RefreshCw, Zap } from "lucide-react";
 
 import { solutions, siteConfig } from "@/lib/site-config";
 import { MobileNav } from "../layout/mobile-nav";
+import { SolutionContactCta } from "./solution-contact-cta";
 
 const iconMap = {
 	refresh: RefreshCw,
@@ -134,18 +135,44 @@ export function SolutionsSection() {
 													{solution.closing}
 												</p>
 											) : null}
-											{solution.id === "plataforma" && 
-											(<div className="flex items-center gap-2">
-												<a
-													href={siteConfig.accessUrl}
-													target={siteConfig.accessUrl.startsWith("http") ? "_blank" : undefined}
-													rel={siteConfig.accessUrl.startsWith("http") ? "noopener noreferrer" : undefined}
-													className="hidden min-h-11 items-center rounded-full border-2 border-econ-orange px-5 font-display font-semibold text-econ-orange text-sm tracking-wide transition-colors hover:bg-econ-orange hover:text-white lg:inline-flex"
-												>
-													Acessar a Econmesh Circular
-												</a>
-												<MobileNav accessHref={siteConfig.accessUrl} />
-											</div>)}
+											{solution.id === "plataforma" ? (
+												<div className="flex items-center gap-2">
+													<a
+														href={siteConfig.accessUrl}
+														target={siteConfig.accessUrl.startsWith("http") ? "_blank" : undefined}
+														rel={
+															siteConfig.accessUrl.startsWith("http")
+																? "noopener noreferrer"
+																: undefined
+														}
+														className="hidden min-h-11 items-center rounded-full border-2 border-econ-orange px-5 font-display font-semibold text-econ-orange text-sm tracking-wide transition-colors hover:bg-econ-orange hover:text-white lg:inline-flex"
+													>
+														Acessar a Econmesh Circular
+													</a>
+													<MobileNav accessHref={siteConfig.accessUrl} />
+												</div>
+											) : null}
+											{solution.id === "dmc" ? (
+												<div className="pt-1">
+													<SolutionContactCta
+														interest="dmc"
+														buttonLabel="Solicitar mais informações"
+														dialogTitle="Solicitar mais informações"
+														dialogDescription="Preencha os dados abaixo para receber mais informações sobre o Econmesh DMC."
+													/>
+												</div>
+											) : null}
+											{solution.id === "mri" ? (
+												<div className="pt-1">
+													<SolutionContactCta
+														interest="mri"
+														buttonLabel="Solicite a visita de um Agente de Circularidade"
+														dialogTitle="Solicitar visita"
+														dialogDescription="Preencha os dados abaixo para solicitar a visita de um Agente de Circularidade."
+														requireAddress
+													/>
+												</div>
+											) : null}
 										</div>
 									</div>
 								</article>
