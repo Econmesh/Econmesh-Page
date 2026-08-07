@@ -41,10 +41,10 @@ export function useChatFlow({ onOpen }: UseChatFlowOptions = {}) {
 
 	const open = useCallback(() => {
 		setIsOpen(true);
-		setMessages((prev) => {
-			if (prev.length > 0) return prev;
-			return [createMessage("bot", CHAT_COPY.welcome)];
-		});
+		setStep("awaiting_message");
+		setMessages([createMessage("bot", CHAT_COPY.welcome)]);
+		setIsSubmitting(false);
+		userMessageRef.current = "";
 		onOpen?.();
 	}, [onOpen]);
 

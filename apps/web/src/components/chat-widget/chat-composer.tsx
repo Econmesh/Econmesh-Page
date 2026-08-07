@@ -1,7 +1,5 @@
 "use client";
 
-import { Button } from "@econmesh/ui/components/button";
-import { Input } from "@econmesh/ui/components/input";
 import { Loader2, SendHorizonal } from "lucide-react";
 import { type FormEvent, useState } from "react";
 
@@ -19,6 +17,7 @@ export function ChatComposer({
 	onSend,
 }: Props) {
 	const [value, setValue] = useState("");
+	const canSend = Boolean(value.trim()) && !disabled && !isSubmitting;
 
 	async function handleSubmit(e: FormEvent) {
 		e.preventDefault();
@@ -31,29 +30,32 @@ export function ChatComposer({
 	return (
 		<form
 			onSubmit={handleSubmit}
-			className="flex items-center gap-2 border-t border-econ-green/10 bg-white p-3"
+			className="border-t border-econ-green/10 bg-white p-3"
 		>
-			<Input
-				value={value}
-				onChange={(e) => setValue(e.target.value)}
-				placeholder={placeholder}
-				disabled={disabled || isSubmitting}
-				className="h-10 flex-1 rounded-lg border-econ-green/20 bg-econ-cream/50 text-sm text-econ-dark placeholder:text-econ-dark/45 focus-visible:border-econ-green focus-visible:ring-econ-green/20"
-				autoComplete={placeholder.includes("e-mail") ? "email" : "off"}
-				type={placeholder.includes("e-mail") ? "email" : "text"}
-			/>
-			<Button
-				type="submit"
-				disabled={disabled || isSubmitting || !value.trim()}
-				className="size-10 shrink-0 rounded-full bg-econ-green text-white hover:bg-econ-dark disabled:opacity-50"
-				aria-label="Enviar mensagem"
-			>
-				{isSubmitting ? (
-					<Loader2 className="size-4 animate-spin" />
-				) : (
-					<SendHorizonal className="size-4" />
-				)}
-			</Button>
+			<label className="relative flex h-11 items-center rounded-full border border-econ-green/25 bg-econ-cream/60 pr-1.5 pl-4 focus-within:border-econ-green focus-within:ring-2 focus-within:ring-econ-green/20">
+				<span className="sr-only">{placeholder}</span>
+				<input
+					value={value}
+					onChange={(e) => setValue(e.target.value)}
+					placeholder={placeholder}
+					disabled={disabled || isSubmitting}
+					className="min-w-0 flex-1 border-0 bg-transparent py-2 text-sm text-econ-dark outline-none placeholder:text-econ-dark/45 disabled:cursor-not-allowed disabled:opacity-60"
+					autoComplete={placeholder.includes("e-mail") ? "email" : "off"}
+					type={placeholder.includes("e-mail") ? "email" : "text"}
+				/>
+				<button
+					type="submit"
+					disabled={!canSend}
+					className="flex size-8 shrink-0 items-center justify-center rounded-full bg-econ-green text-white transition-colors hover:bg-econ-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-econ-green disabled:bg-econ-green/35 disabled:opacity-70"
+					aria-label="Enviar mensagem"
+				>
+					{isSubmitting ? (
+						<Loader2 className="size-4 animate-spin" aria-hidden="true" />
+					) : (
+						<SendHorizonal className="size-4" aria-hidden="true" />
+					)}
+				</button>
+			</label>
 		</form>
 	);
 }

@@ -28,9 +28,11 @@ export function ChatWidget() {
 				onSend={sendMessage}
 			/>
 
-			<div className="fixed right-4 bottom-4 z-[61] md:right-6 md:bottom-6">
-				<ChatFab isOpen={isOpen} onClick={toggle} />
-			</div>
+			{!isOpen ? (
+				<div className="fixed right-4 bottom-4 z-[61] md:right-6 md:bottom-6">
+					<ChatFab isOpen={false} onClick={toggle} />
+				</div>
+			) : null}
 		</>
 	);
 }
