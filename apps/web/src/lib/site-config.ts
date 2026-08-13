@@ -159,6 +159,32 @@ export const team = {
 	],
 } as const;
 
+export const partners = {
+	heading: "Nossos Parceiros",
+	subheading:
+		"Instituições e organizações que apoiam a construção do ecossistema de economia circular da ECONMESH.",
+	items: [
+		{
+			name: "Porto Digital",
+			image: "/logo.5417d9c.svg",
+			width: 280,
+			height: 158,
+		},
+		{
+			name: "FACEPE — Fundação de Amparo à Ciência e Tecnologia do Estado de Pernambuco",
+			image: "/Marca-FACEPE.png",
+			width: 320,
+			height: 120,
+		},
+		{
+			name: "aponti",
+			image: "/APONTI_MARCA_HORIZONTAL.png",
+			width: 280,
+			height: 80,
+		},
+	],
+} as const;
+
 export const strategy = {
 	heading: "Nossa Estratégia",
 	mission: {

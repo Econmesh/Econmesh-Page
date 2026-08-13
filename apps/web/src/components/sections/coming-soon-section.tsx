@@ -43,7 +43,7 @@ export function ComingSoonSection() {
 	return (
 		<section
 			id="novidades"
-			className="border-econ-green/10 border-t bg-white px-4 py-16 sm:px-6 sm:py-20 lg:px-8"
+			className="bg-econ-cream border-econ-green/10 border-t px-4 py-16 sm:px-6 sm:py-20 lg:px-8"
 			aria-labelledby="novidades-heading"
 		>
 			<div className="mx-auto max-w-xl text-center">
