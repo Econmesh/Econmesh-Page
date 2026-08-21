@@ -9,7 +9,7 @@ export const siteConfig = {
 	accessUrl: env.NEXT_PUBLIC_ACCESS_APP_URL ?? "#contato",
 	api: env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000",
 	contact: {
-		email: "contato@econmesh.com.br",
+		email: "simbioseindustrial@econmesh.com.br",
 		phone: "(81) 99623-8779",
 		location: "Recife - PE, Brasil",
 	},
