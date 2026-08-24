@@ -180,6 +180,12 @@ export const partners = {
 			name: "aponti",
 			image: "/APONTI_MARCA_HORIZONTAL.png",
 			width: 280,
+			height: 120,
+		},
+		{
+			name: "CENTELHA PE",
+			image: "/Logotipos_Centelha_Estaduais-PE.png",
+			width: 280,
 			height: 80,
 		},
 	],
